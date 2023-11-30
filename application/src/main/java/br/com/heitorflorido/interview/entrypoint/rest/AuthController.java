@@ -1,6 +1,7 @@
 package br.com.heitorflorido.interview.entrypoint.rest;
 
 import br.com.heitorflorido.interview.model.Usuario;
+import br.com.heitorflorido.interview.usecase.CriarUsuarioUseCase;
 import br.com.heitorflorido.interview.usecase.ObterUsuarioUseCase;
 import br.com.heitorflorido.interview.usecase.ObterUsuariosUseCase;
 import lombok.RequiredArgsConstructor;
@@ -29,18 +30,18 @@ public class AuthController {
 
     private final ObterUsuarioUseCase obterUsuarioUseCase;
     private final ObterUsuariosUseCase obterUsuariosUseCase;
+    private final CriarUsuarioUseCase criarUsuarioUseCase;
 
     @GetMapping("/usuario/{id}")
     public Mono<Usuario> validar(final @PathVariable Long id) {
         return obterUsuarioUseCase.execute(id);
     }
-/* 
-    @PostMapping("/usuario/{id}")
+
+    @PostMapping("/usuario")
     public Mono<Usuario> create(@RequestBody Usuario req) {
-        service.save(new Usuario (req));
-        return ResponseEntity.status(HttpStatus.OK).body("OK");
+        return criarUsuarioUseCase.execute(req);
     }
-*/
+
     @GetMapping("/usuario")
     public Flux<Usuario> all() {
         return obterUsuariosUseCase.execute();
