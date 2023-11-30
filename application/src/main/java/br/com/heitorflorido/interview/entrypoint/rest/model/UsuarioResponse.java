@@ -1,5 +1,7 @@
 package br.com.heitorflorido.interview.entrypoint.rest.model;
 
+import java.time.LocalDate;
+
 import br.com.heitorflorido.interview.model.Usuario;
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +16,7 @@ public class UsuarioResponse {
     private String cidade;
     private String uf;
     private String cep;
-    private String dataNascimento;
+    private LocalDate dataNascimento;
 
     public static UsuarioResponse toUsuarioResponse(final Usuario usuario) {
 
@@ -24,7 +26,7 @@ public class UsuarioResponse {
             .cidade(usuario.getCidade())
             .uf(usuario.getUf())
             .cep(usuario.getCep())
-            .dataNascimento(usuario.getNataNascimento())
+            .dataNascimento(usuario.getDataNascimento())
             .build();
     }
 }

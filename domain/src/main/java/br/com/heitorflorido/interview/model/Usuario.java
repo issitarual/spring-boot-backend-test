@@ -1,5 +1,7 @@
 package br.com.heitorflorido.interview.model;
 
+import java.time.LocalDate;
+
 import lombok.Builder;
 import lombok.Value;
 
