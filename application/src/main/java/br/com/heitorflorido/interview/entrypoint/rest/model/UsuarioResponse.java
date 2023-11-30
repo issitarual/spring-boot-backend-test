@@ -13,6 +13,8 @@ public class UsuarioResponse {
     private String nome;
     private String cidade;
     private String uf;
+    private String cep;
+    private String dataNascimento;
 
     public static UsuarioResponse toUsuarioResponse(final Usuario usuario) {
 
@@ -21,6 +23,8 @@ public class UsuarioResponse {
             .nome(usuario.getNome())
             .cidade(usuario.getCidade())
             .uf(usuario.getUf())
+            .cep(usuario.getCep())
+            .dataNascimento(usuario.getNataNascimento())
             .build();
     }
 }

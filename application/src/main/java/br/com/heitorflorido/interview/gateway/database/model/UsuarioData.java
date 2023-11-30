@@ -21,6 +21,10 @@ public class UsuarioData {
     String cidade;
     @Column("cd_uf")
     String uf;
+    @Column("dn_usuario")
+    LocalDate dataNascimento;
+    @Column("cep_usuario")
+    String cep;
 
     public static UsuarioData toUsuarioData(final Usuario usuario) {
 
@@ -29,6 +33,8 @@ public class UsuarioData {
             .nome(usuario.getNome())
             .cidade(usuario.getCidade())
             .uf(usuario.getUf())
+            .dataNascimento(usuario.getDataNascimento())
+            .cep(usuario.getCep())
             .build();
     }
 
@@ -39,6 +45,8 @@ public class UsuarioData {
             .nome(usuario.getNome())
             .cidade(usuario.getCidade())
             .uf(usuario.getUf())
+            .dataNascimento(usuario.getDataNascimento())
+            .cep(usuario.getCep())
             .build();
     }
 }

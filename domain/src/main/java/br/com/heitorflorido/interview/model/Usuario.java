@@ -11,4 +11,6 @@ public class Usuario {
     String nome;
     String cidade;
     String uf;
+    String cep;
+    LocalDate dataNascimento;
 }
