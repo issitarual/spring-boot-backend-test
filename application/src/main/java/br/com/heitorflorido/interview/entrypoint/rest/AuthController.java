@@ -4,6 +4,7 @@ import br.com.heitorflorido.interview.model.Usuario;
 import br.com.heitorflorido.interview.usecase.CriarUsuarioUseCase;
 import br.com.heitorflorido.interview.usecase.ObterUsuarioUseCase;
 import br.com.heitorflorido.interview.usecase.ObterUsuariosUseCase;
+import br.com.heitorflorido.interview.usecase.DeletarUsuarioUseCase;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,6 +32,7 @@ public class AuthController {
     private final ObterUsuarioUseCase obterUsuarioUseCase;
     private final ObterUsuariosUseCase obterUsuariosUseCase;
     private final CriarUsuarioUseCase criarUsuarioUseCase;
+    private final DeletarUsuarioUseCase deletarUsuarioUseCase;
 
     @GetMapping("/usuario/{id}")
     public Mono<Usuario> validar(final @PathVariable Long id) {
@@ -65,9 +67,9 @@ public class AuthController {
         });
         return obterUsuarioUseCase.execute(id);
     }*/
-    /* 
+    
     @DeleteMapping("/usuario/{id}")
     void deleteUsuario(@PathVariable Long id) {
-        service.deleteById(id);
-    }*/
+        deletarUsuarioUseCase.execute(id);
+    }
 }
