@@ -16,6 +16,13 @@ public class CriarUsuarioDatabaseGateway implements CriarUsuarioGateway {
 
     @Override
     public Mono<Usuario> execute(Usuario req) {
-        return usuarioRepository.save(req.toBuilder());
+        Usuario user = Usuario.builder()
+            .nome(req.getNome())
+            .cidade(req.getCidade())
+            .uf(req.getUf())
+            .dataNascimento(req.getDataNascimento())
+            .cep(req.getCep())
+            .build();
+        return usuarioRepository.save(user);
     }
 }

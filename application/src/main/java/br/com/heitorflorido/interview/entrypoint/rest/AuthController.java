@@ -47,7 +47,7 @@ public class AuthController {
     }
 
      @PutMapping("/usuario/{id}")
-     Mono<Object> validar(@RequestBody Usuario req, @PathVariable Long id) {
+     public Mono<Object> validar(@RequestBody Usuario req, @PathVariable Long id) {
         return editarUsuarioUseCase.execute(req, id);
     }
     
