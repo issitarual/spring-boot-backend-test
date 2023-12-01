@@ -16,6 +16,6 @@ public class CriarUsuarioDatabaseGateway implements CriarUsuarioGateway {
 
     @Override
     public Mono<Usuario> execute(Usuario req) {
-        return usuarioRepository.save(req);
+        return usuarioRepository.save(req.toBuilder());
     }
 }

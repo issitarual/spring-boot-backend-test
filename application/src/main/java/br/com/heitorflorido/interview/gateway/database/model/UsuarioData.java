@@ -52,4 +52,16 @@ public class UsuarioData {
             .cep(usuario.getCep())
             .build();
     }
+
+    public void setCidade(String cidade2) {
+    }
+
+    public void setCep(String cep2) {
+    }
+
+    public void setDataNascimento(LocalDate dataNascimento2) {
+    }
+
+    public void setNome(String nome2) {
+    }
 }
